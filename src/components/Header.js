@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 
 import pfp from '../images/pfp.jpg'
 
@@ -19,7 +20,8 @@ const Header = (props) => (
 			<ul>
 				<li><a href="javascript:;" onClick={() => {props.onOpenArticle('intro')}}>Intro</a></li>
 				<li><a href="javascript:;" onClick={() => {props.onOpenArticle('work')}}>Work</a></li>
-				<li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li>
+				<li><Link to="/gallery/">Gallery</Link></li>
+				{/* <li><a href="javascript:;" onClick={() => {props.onOpenArticle('about')}}>About</a></li> */}
 				<li><a href="javascript:;" onClick={() => {props.onOpenArticle('blog')}}>Blog</a></li>
 			</ul>
 		</nav>
