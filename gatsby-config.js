@@ -7,6 +7,13 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-plugin-emotion',
+      options: {
+        autoLabel: process.env.NODE_ENV !== 'production',
+        labelFormat: '[filename]--[local]',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-default',
@@ -18,6 +25,40 @@ module.exports = {
         icon: 'src/images/site-logo.png', // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'gallery',
+        path: `${__dirname}/gallery`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 820,
+              quality: 90,
+              linkImagesToOriginal: true,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-external-links',
+            options: {
+              target: '_blank',
+              rel: 'nofollow noopener noreferrer',
+            },
+          },
+          'gatsby-remark-responsive-iframe',
+        ],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    'gatsby-plugin-lodash',
+    'gatsby-plugin-catch-links',
     'gatsby-plugin-sass',
     'gatsby-plugin-offline'
   ],

@@ -1,6 +1,7 @@
 # Project dependencies
 .cache
 node_modules
+node_modules_old
 yarn-error.log
 package-lock.json
 yarn.lock
