@@ -94,7 +94,7 @@ class Gallery extends React.Component {
       <Wrapper>
         {this.props.photos.map((photo, i) => {
           return (
-            <Item key={photo.node.fields.slug} onClick={e => this.openLightbox(i, e)}>
+            <Item key={photo.node.fields.slug} onClick={e => this.openLightbox(i, e)} style={{cursor: 'pointer'}}>
               <Content>
                 <ImageWrapper>
                   <Img fluid={photo.node.frontmatter.cover.childImageSharp.fluid} />
