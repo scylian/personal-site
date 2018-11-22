@@ -41,7 +41,7 @@ module.exports = {
             options: {
               maxWidth: 820,
               quality: 90,
-              linkImagesToOriginal: false,
+              linkImagesToOriginal: true,
             },
           },
           {
@@ -59,7 +59,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-lodash',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-sitemap',
     'gatsby-plugin-sass',
     'gatsby-plugin-offline'
   ],

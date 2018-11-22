@@ -90,8 +90,6 @@ class Gallery extends React.Component {
   }
 
   render() {
-    console.log(this.props.photos[0].node.frontmatter.cover.childImageSharp.fluid);
-
     return (
       <Wrapper>
         {this.props.photos.map((photo, i) => {

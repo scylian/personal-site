@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 // import PropTypes from 'prop-types';
 import Gallery from '../components/Gallery';
+import './gallery.css';
 
 class GalleryPage extends React.Component {
   constructor(props) {
