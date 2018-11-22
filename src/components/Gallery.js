@@ -111,6 +111,7 @@ class Gallery extends React.Component {
           onClickPrev={() => this.gotoPrevLightboxImage()}
           onClickNext={() => this.gotoNextLightboxImage()}
           onClose={() => this.closeLightbox()}
+          width="2000"
         />
       </Wrapper>
     );
