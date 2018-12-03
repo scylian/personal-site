@@ -1,6 +1,6 @@
 import React from 'react';
+import Layout from '../components/layout';
 import { graphql } from 'gatsby';
-// import PropTypes from 'prop-types';
 import Gallery from '../components/Gallery';
 import './gallery.css';
 
@@ -13,29 +13,14 @@ class GalleryPage extends React.Component {
   render() {
     const data = this.props.data.allMarkdownRemark.edges;
     return (
-      <div>
+      <Layout location={this.props.location}>
         <Gallery photos={data} />
-      </div>
+      </Layout>
     )
   }
 }
-// const Index = ({
-//   data: {
-//     allMarkdownRemark: { edges: projectEdges },
-//   },
-// }) => (
-//   <Gallery projectEdges={projectEdges} />
-// );
 
 export default GalleryPage;
-
-// Index.propTypes = {
-//   data: PropTypes.shape({
-//     allMarkdownRemark: PropTypes.shape({
-//       edges: PropTypes.array.isRequired,
-//     }),
-//   }).isRequired,
-// };
 
 export const query = graphql`
   query GalleryQuery {
