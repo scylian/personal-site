@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import NavigationHeader from '../components/NavigationHeader'
 import { StaticQuery, graphql } from 'gatsby'
+
 
 import '../assets/scss/main.scss'
 
@@ -17,11 +19,11 @@ const Layout = ({ children, location }) => {
     )
   } else {
     content = (
-      <div id="wrapper" className="page">
+      // <div id="wrapper" className="page">
         <div>
           {children}
         </div>
-      </div>
+      // </div>
     )
   }
 
@@ -32,6 +34,10 @@ const Layout = ({ children, location }) => {
           site {
             siteMetadata {
               title
+              menuLinks {
+                name
+                link
+              }
             }
           }
         }
@@ -47,7 +53,15 @@ const Layout = ({ children, location }) => {
           >
             <html lang="en" />
           </Helmet>
-          {content}
+          {location && location.pathname === '/' ? content :
+            <div>
+              <NavigationHeader 
+              menuLinks={data.site.siteMetadata.menuLinks}
+              siteTitle={data.site.siteMetadata.title}
+              location={location} />
+              {content}
+            </div>
+          }
         </>
       )}
     />

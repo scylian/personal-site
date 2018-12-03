@@ -2,7 +2,17 @@ module.exports = {
   siteMetadata: {
     title: "Bien Nguyen",
     author: "Bien Nguyen",
-    description: "Personal website and professional portfolio for Front-end Developer, Bien Nguyen"
+    description: "Personal website and professional portfolio for Front-end Developer, Bien Nguyen",
+    menuLinks:[
+      {
+        name:'Home',
+        link:'/'
+      },
+      {
+        name:'Gallery',
+        link:'/gallery'
+      }
+    ]
   },
   plugins: [
     'gatsby-plugin-react-helmet',

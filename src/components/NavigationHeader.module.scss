@@ -1,0 +1,19 @@
+.navBar {
+  padding: 1rem 2rem;
+  float: right;
+}
+
+.listItem {
+  padding-left: 2rem;
+  
+  a {
+    border-bottom: none;
+  }
+
+  &.active {
+    font-weight: 600;
+    // a {
+    //   border-bottom: solid 1px rgba(255, 255, 255, 0.5)
+    // }
+  }
+}

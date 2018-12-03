@@ -94,7 +94,7 @@ class Gallery extends React.Component {
       <Wrapper>
         {this.props.photos.map((photo, i) => {
           return (
-            <Item key={photo.node.fields.slug} onClick={e => this.openLightbox(i, e)} style={{cursor: 'pointer'}}>
+            <Item key={i} onClick={e => this.openLightbox(i, e)} style={{cursor: 'pointer'}}>
               <Content>
                 <ImageWrapper>
                   <Img fluid={photo.node.frontmatter.cover.childImageSharp.fluid} />
@@ -111,7 +111,7 @@ class Gallery extends React.Component {
           onClickPrev={() => this.gotoPrevLightboxImage()}
           onClickNext={() => this.gotoNextLightboxImage()}
           onClose={() => this.closeLightbox()}
-          width="2000"
+          width={2000}
         />
       </Wrapper>
     );
